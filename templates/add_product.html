@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="mb-4">Adicionar Novo Produto</h1>
+
+    <form method="POST" action="{{ url_for('main_bp.create_product') }}">
+        <div class="mb-3">
+            <label for="name" class="form-label">Nome do Produto</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Descrição</label>
+            <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="price" class="form-label">Preço</label>
+                <input type="number" step="0.01" class="form-control" id="price" name="price" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="stock" class="form-label">Estoque</label>
+                <input type="number" class="form-control" id="stock" name="stock" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar Produto</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="mb-4">Upload de Vendas (CSV)</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <div class="card">
+        <div class="card-body">
+            <p>Selecione um arquivo no formato .csv para importar os registros de vendas para o sistema.</p>
+            <form method="POST" action="{{ url_for('main_bp.upload_sales') }}" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="file" class="form-label">Arquivo CSV</label>
+                    <input class="form-control" type="file" id="file" name="file" accept=".csv" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar Arquivo</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

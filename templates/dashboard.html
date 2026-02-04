@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="mb-4">Dashboard</h1>
+    <p>Bem-vindo ao painel de gerenciamento da StyleSync!</p>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-center mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Total de Produtos</h5>
+                    <p class="card-text fs-2">_</p> <a href="{{ url_for('main_bp.get_products') }}" class="btn btn-primary">Ver Produtos</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Vendas no Mês</h5>
+                    <p class="card-text fs-2">_</p>
+                    <a href="#" class="btn btn-secondary">Ver Relatórios</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
